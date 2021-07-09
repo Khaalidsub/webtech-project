@@ -15,7 +15,7 @@ export interface Room {
 }
 export const createMessage = (data:{ip_address:string, input:string,room:number}) =>{
     try {
-        return axios.post<Message>('api/chats',
+        return axios.post<Message>('https://digitalcrusader.club/api/chats',
         data
         )
     } catch (error) {
@@ -24,7 +24,7 @@ export const createMessage = (data:{ip_address:string, input:string,room:number}
 }
 export const getMessages = (roomId:number) =>{
     try {
-        return axios.get<Message[]>(`api/chats/${roomId}`)
+        return axios.get<Message[]>(`https://digitalcrusader.club/api/chats/${roomId}`)
     } catch (error) {
         throw new Error(error)
     }
@@ -38,14 +38,14 @@ export const getMessages = (roomId:number) =>{
 // }
 export const getRooms = () =>{ 
     try {
-        return axios.get<Room[]>(`api/rooms/`)
+        return axios.get<Room[]>(`https://digitalcrusader.club/api/rooms/`)
     } catch (error) {
         throw new Error(error)
     }
 }
 export const getRoom = (id:number) =>{ 
     try {
-        return axios.get<Room>(`api/rooms/${id}`)
+        return axios.get<Room>(`https://digitalcrusader.club/api/rooms/${id}`)
     } catch (error) {
         throw new Error(error)
     }
