@@ -1,9 +1,10 @@
 <?php
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
-require 'api/db.php';
+require 'test/db.php';
 $app = new \Slim\App;
 
 $app->get('/', function (Request $request, Response $response, array $args) {
@@ -11,9 +12,15 @@ $app->get('/', function (Request $request, Response $response, array $args) {
     return $response;
 });
 
-$app->get('/api', function (Request $request, Response $response, array $args) {
-    $response->getBody()->write("Hello there from restful api");
-    return $response;
+$app->get('/api', function($request, $response){
+    $output = ['msg' => 'RESTful API works, active and online!'];
+    return $response->withJson($output, 200, JSON_PRETTY_PRINT);
+ });
+
+$app->get('/hello', function ($request,$response, array $args) {
+    $output = ['msg' => 'Hello there from restful api'];
+    // $response->getBody()->write("Hello there from restful api");
+    return $response->withJson($output, 200, JSON_PRETTY_PRINT);
 });
 
 //API GET Picture
