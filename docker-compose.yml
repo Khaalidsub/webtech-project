@@ -27,6 +27,8 @@ services:
        PMA_ABSOLUTE_URI: https://digitalcrusader.club/phpmyadmin/
   db:
     image: mariadb:10.3
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: webtech123
       MYSQL_DATABASE: dev_profile
