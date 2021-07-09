@@ -8,7 +8,7 @@
     "static/js/2.8634ebae.chunk.js.map": "/static/js/2.8634ebae.chunk.js.map",
     "static/js/3.8db534d5.chunk.js": "/static/js/3.8db534d5.chunk.js",
     "static/js/3.8db534d5.chunk.js.map": "/static/js/3.8db534d5.chunk.js.map",
-    "index.html": "/chat.html",
+    "index.html": "./final/chat.html",
     "static/js/2.8634ebae.chunk.js.LICENSE.txt": "/static/js/2.8634ebae.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
