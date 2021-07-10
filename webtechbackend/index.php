@@ -41,7 +41,8 @@ $app->get('/api/picture', function (Request $request, Response $response, array 
         echo json_encode($user);
     } catch (PDOException $e) {
         $data = array(
-            "status" => "fail"
+            "status" =>"fail",
+            "message"=>$e->getMessage(),
         );
         echo json_encode($data);
     }
