@@ -12,19 +12,19 @@ $app->get('/', function (Request $request, Response $response, array $args) {
     return $response;
 });
 
-$app->get('/api', function($request, $response){
-    $output = ['msg' => 'RESTful API works, active and online!'];
+$app->get('/slim', function($request, $response){
+    $output = ['msg' => 'RESTful slim works, active and online!'];
     return $response->withJson($output, 200, JSON_PRETTY_PRINT);
  });
 
 $app->get('/hello', function ($request,$response, array $args) {
-    $output = ['msg' => 'Hello there from restful api'];
-    // $response->getBody()->write("Hello there from restful api");
+    $output = ['msg' => 'Hello there from restful slim'];
+    // $response->getBody()->write("Hello there from restful slim");
     return $response->withJson($output, 200, JSON_PRETTY_PRINT);
 });
 
-//API GET Picture
-$app->get('/api/picture', function (Request $request, Response $response, array $args) {
+//slim GET Picture
+$app->get('/slim/picture', function (Request $request, Response $response, array $args) {
     // $response->getBody()->write("get all user");
     // return $response;
 
@@ -35,7 +35,6 @@ $app->get('/api/picture', function (Request $request, Response $response, array 
         $db = new db();
         // Connect
         $db = $db->connect();
-
         $stmt = $db->query($sql);
         $user = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
@@ -48,8 +47,8 @@ $app->get('/api/picture', function (Request $request, Response $response, array 
     }
 });
 
-//API DELETE Picture
-$app->delete('/api/picture/{id}', function (Request $request, Response $response, array $args) {
+//slim DELETE Picture
+$app->delete('/slim/picture/{id}', function (Request $request, Response $response, array $args) {
     $id = $args["id"];
     $sql = "DELETE FROM picture WHERE id = $id";
 
@@ -77,7 +76,7 @@ $app->delete('/api/picture/{id}', function (Request $request, Response $response
     }
 });
 
-$app->get('/api/event1', function (Request $request, Response $response, array $args) {
+$app->get('/slim/event1', function (Request $request, Response $response, array $args) {
     // $response->getBody()->write("get all user");
     // return $response;
 
@@ -101,7 +100,7 @@ $app->get('/api/event1', function (Request $request, Response $response, array $
     }
 });
 
-$app->get('/api/event2', function (Request $request, Response $response, array $args) {
+$app->get('/slim/event2', function (Request $request, Response $response, array $args) {
     // $response->getBody()->write("get all user");
     // return $response;
 
@@ -125,7 +124,7 @@ $app->get('/api/event2', function (Request $request, Response $response, array $
     }
 });
 
-$app->get('/api/event3', function (Request $request, Response $response, array $args) {
+$app->get('/slim/event3', function (Request $request, Response $response, array $args) {
     // $response->getBody()->write("get all user");
     // return $response;
 
@@ -149,8 +148,8 @@ $app->get('/api/event3', function (Request $request, Response $response, array $
     }
 });
 
-// API POST EVENT 1
-$app->post('/api/event1', function (Request $request, Response $response, array $args) {
+// slim POST EVENT 1
+$app->post('/slim/event1', function (Request $request, Response $response, array $args) {
     $title = $_POST["title"];
     $start = $_POST["start"];
 
@@ -182,8 +181,8 @@ $app->post('/api/event1', function (Request $request, Response $response, array 
     }
 });
 
-// API POST EVENT 2
-$app->post('/api/event2', function (Request $request, Response $response, array $args) {
+// slim POST EVENT 2
+$app->post('/slim/event2', function (Request $request, Response $response, array $args) {
     $title = $_POST["title"];
     $start = $_POST["start"];
 
@@ -215,8 +214,8 @@ $app->post('/api/event2', function (Request $request, Response $response, array 
     }
 });
 
-// API POST EVENT 3
-$app->post('/api/event3', function (Request $request, Response $response, array $args) {
+// slim POST EVENT 3
+$app->post('/slim/event3', function (Request $request, Response $response, array $args) {
     $title = $_POST["title"];
     $start = $_POST["start"];
 

@@ -7,11 +7,11 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, DELETE");
         private $host = 'localhost';
         private $user = 'root';
         private $password = 'webtech123';
-        private $dbname = 'dev_profile';
+        private $dbname = 'webtechbackenddb';
 
         // Connect
         public function connect(){
-            $mysql_connect_str = "mysql:host=$this->host;dbname=$this->dbname";
+            $mysql_connect_str = "mysql:host=$this->host;dbname=$this->dbname;";
             $dbConnection = new PDO($mysql_connect_str, $this->user, $this->password);
             $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $dbConnection;
