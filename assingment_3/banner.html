@@ -115,7 +115,7 @@
         function fetchAll() {
             $.ajax({
                 type: "GET",
-                url: "http://digitalcrusader.club/webtechbackend/test/getAllPicture.php",
+                url: "https://digitalcrusader.club/webtechbackend/test/getAllPicture.php",
                 dataType: "json",
                 success: function (data, status, xhr) {
                     var prettyContent = '';
@@ -155,7 +155,7 @@
 
             $.ajax({
                 type: "DELETE",
-                url: "http://http://digitalcrusader.club/webtechbackend/test/deletePicture.php?id=" + document.forms["myForm"]["url"].value,
+                url: "https://digitalcrusader.club/webtechbackend/test/deletePicture.php?id=" + document.forms["myForm"]["url"].value,
                 dataType: "json",
                 success: function (data) {
                     if (data.status == "success") {
