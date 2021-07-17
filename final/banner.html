@@ -155,7 +155,7 @@
 
             $.ajax({
                 type: "DELETE",
-                url: "https://digitalcrusader.club/webtechbackend/api/picture" + document.forms["myForm"]["url"].value,
+                url: "https://digitalcrusader.club/webtechbackend/api/picture/" + document.forms["myForm"]["url"].value,
                 dataType: "json",
                 success: function (data) {
                     if (data.status == "success") {
